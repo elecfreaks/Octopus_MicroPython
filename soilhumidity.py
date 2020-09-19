@@ -1,5 +1,5 @@
 from microbit import *
-from enum import *
+
 
 
 class SOILHUMIDITY(object):
@@ -13,11 +13,8 @@ class SOILHUMIDITY(object):
     Returns:
         value: 水分含量百分比
     """
-    def __init__(self, RJ_pin):
-        if RJ_pin == J1:
-            self.__pin = pin1
-        elif RJ_pin == J2:
-            self.__pin = pin2
+    def __init__(self, pin):
+        self.__pin = pin
 
     def get_soilhumidity(self):
         """基本描述
@@ -33,6 +30,6 @@ class SOILHUMIDITY(object):
 
 
 if __name__ == "__main__":
-    s = SOILHUMIDITY(J1)
+    s = SOILHUMIDITY(pin1)
     while True:
         print(s.get_soilhumidity())

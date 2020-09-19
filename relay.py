@@ -1,5 +1,4 @@
 from microbit import *
-from enum import *
 
 
 class RELAY(object):
@@ -12,15 +11,8 @@ class RELAY(object):
 
     """
 
-    def __init__(self, RJ_pin):
-        if RJ_pin == J1:
-            self.__pin = pin8
-        elif RJ_pin == J2:
-            self.__pin = pin12
-        elif RJ_pin == J3:
-            self.__pin = pin14
-        elif RJ_pin == J4:
-            self.__pin = pin16
+    def __init__(self, pin):
+        self.__pin = pin
 
     def set_relay(self, state):
         """基本描述
@@ -40,5 +32,5 @@ class RELAY(object):
 
 
 if __name__ == "__main__":
-    l = RELAY(J4)
+    l = RELAY(pin1)
     l.set_laser(1)

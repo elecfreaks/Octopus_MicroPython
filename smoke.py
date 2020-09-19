@@ -1,5 +1,4 @@
 from microbit import *
-from enum import *
 
 
 class SMOKE(object):
@@ -14,11 +13,8 @@ class SMOKE(object):
         value: 烟雾值
     """
 
-    def __init__(self, RJ_pin):
-        if RJ_pin == J1:
-            self.__pin = pin1
-        elif RJ_pin == J2:
-            self.__pin = pin2
+    def __init__(self, pin):
+        self.__pin = pin
 
     def get_smoke(self):
         """基本描述

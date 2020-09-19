@@ -1,5 +1,4 @@
 from microbit import *
-from enum import *
 
 
 class UVLEVEL(object):
@@ -13,11 +12,8 @@ class UVLEVEL(object):
     Returns:
         value: 紫外线强度值 0-15
     """
-    def __init__(self, RJ_pin):
-        if RJ_pin == J1:
-            self.__pin = pin1
-        elif RJ_pin == J2:
-            self.__pin = pin2
+    def __init__(self, pin):
+        self.__pin = pin
 
     def get_uvlevel(self):
         """基本描述
@@ -33,6 +29,6 @@ class UVLEVEL(object):
 
 
 if __name__ == "__main__":
-    s = UVLEVEL(J1)
+    s = UVLEVEL(pin1)
     while True:
         print(s.get_uvlevel())

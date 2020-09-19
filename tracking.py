@@ -1,5 +1,4 @@
 from microbit import *
-from enum import *
 
 
 class TRACKING(object):
@@ -12,20 +11,9 @@ class TRACKING(object):
 
     """
 
-    def __init__(self, RJ_pin):
-        if RJ_pin == J1:
-            self.__pinL = pin1
-            self.__pinR = pin8
-        elif RJ_pin == J2:
-            self.__pinL = pin2
-            self.__pinR = pin12
-        elif RJ_pin == J3:
-            self.__pinL = pin13
-            self.__pinR = pin14
-        elif RJ_pin == J4:
-            self.__pinL = pin15
-            self.__pinR = pin16
-
+    def __init__(self, pin_l, pin_r):
+        self.__pinL = pin_l
+        self.__pinR = pin_r
         self.__pinL.set_pull(self.__pinL.PULL_UP)
         self.__pinR.set_pull(self.__pinR.PULL_UP)
 
@@ -54,7 +42,7 @@ class TRACKING(object):
 
 
 if __name__ == '__main__':
-    trc = TRACKING(J1)
+    trc = TRACKING(pin1,pin2)
     while True:
         if trc.get_state() == 10:
             display.show(Image.HAPPY)
