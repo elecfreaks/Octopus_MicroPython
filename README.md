@@ -1,2 +1,2 @@
 # Octopus_MicroPython
-Microprython Library of Octopus series sensors
+老版Octopus的MicroPython模块
