@@ -25,7 +25,7 @@ class LIGHT(object):
         """
         __value = self.__pin.read_analog()
         if __value <= 200:
-            return ((__value - 43) * (1600 - 0)) / (200 - 43) + 0
+            return ((__value - 45) * (1600 - 0)) / (200 - 45) + 0
         else:
             return ((__value - 200) * (14000 - 1600)) / (1023 - 200) + 1600
 

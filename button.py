@@ -24,7 +24,7 @@ class BUTTON(object):
             boolean: 按下返回True, 未按下返回False
 
         """
-        if self.__pin.read_digital() == 0 and self.__pin.read_digital() == 1:
+        if self.__pin.read_digital() == 1:
             return True
         else:
             return False

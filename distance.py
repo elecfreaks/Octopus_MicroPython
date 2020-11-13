@@ -16,9 +16,9 @@ class DISTANCE(object):
         distance: 距离
     """
 
-    def __init__(self, pin_e, pin_t):
-        self.__pin_e = pin_e
-        self.__pin_t = pin_t
+    def __init__(self, pin_d):
+        self.__pin_e = pin_d
+        self.__pin_t = pin_d
 
     def get_distance(self, unit=0):
         """基本描述
@@ -45,7 +45,7 @@ class DISTANCE(object):
 
 
 if __name__ == "__main__":
-    dis = DISTANCE(pin8, pin12)
+    dis = DISTANCE(pin8)
     while 1:
         print(dis.get_distance())
         sleep(500)
