@@ -1,7 +1,5 @@
 from microbit import *
 
-
-
 class SOILHUMIDITY(object):
     """基本描述
 
@@ -25,8 +23,9 @@ class SOILHUMIDITY(object):
             value: 含水量百分比
         """
         __value = self.__pin.read_analog()
-        value = ((__value - 0) * (100 - 0)) / (1023 - 0) + 0
-        return 100-value
+        # 调整公式以使值从0开始，注意这里的计算逻辑已经修正
+        value = ((__value - 0) * (100 - 0)) / (1023 - 0)
+        return value
 
 
 if __name__ == "__main__":
